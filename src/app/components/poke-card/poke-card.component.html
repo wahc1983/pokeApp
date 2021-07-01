@@ -1,0 +1,17 @@
+<div class="poke-card-header">
+	<h3 class="poke-card-title">#{{pokemon.id}} {{pokemon.name}}</h3>
+</div>
+<div class="poke-card-content">
+	<img mat-card-image src="{{pokemon.sprites.front_default}}" alt="{{pokemon.name}}">
+	<div class="poke-card-type">
+		<h4>Tipo:</h4>
+	  <ul>
+	  	<li *ngFor="let tipo of pokemon.types" >
+	  		{{tipo.type.name}}
+	  	</li>
+	  </ul>		
+	</div>
+</div>
+<div class="poke-card-footer">
+	<a [routerLink]="['/pokemon-details', pokemon.name]" mat-button>Mostrar más...</a>
+</div>

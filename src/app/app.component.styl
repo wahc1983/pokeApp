@@ -1,0 +1,30 @@
+.container-main
+	display grid
+	width 100vw
+	height 100vh
+	margin 0 auto
+	background-color white
+	grid-template-columns 180px 1fr
+	grid-template-rows 140px 4fr 82px
+	grid-template-areas "sidebar header header""sidebar ccontent ccontent""sidebar footer footer"
+	
+.sidebar
+	background-color #19222a
+	grid-area sidebar
+	
+.container-content
+	grid-area ccontent
+	
+.header
+	grid-area header
+
+.header-container
+	display grid
+	grid-template-rows 120px 20px
+	grid-template-areas "imgP imgP""alert alert"
+	
+.footer
+	background-color red
+	grid-area footer
+	display flex
+	justify-content center

@@ -1,0 +1,18 @@
+<section>
+	<div id="search-box">
+		<app-search-box  [(pokeSearchModel)]="pokeSearchModel"></app-search-box>
+	</div>
+	<div>
+		<div *ngIf="loading; else showPokeGrid" >
+			<p class="poke-grid-loader-title">CARGANDO...</p>
+			<div class="o-pokeball c-loader u-flip"></div>
+		</div>
+		<ng-template #showPokeGrid>
+			<div id="poke-grid">
+				<div *ngFor="let poke of pokemons | pokeSearchBar: pokeSearchModel" >
+					<app-poke-card id="{{poke.name}}" class="poke-card" [pokemon] = poke ></app-poke-card>
+				</div>			
+			</div>
+		</ng-template>
+	</div>
+</section>

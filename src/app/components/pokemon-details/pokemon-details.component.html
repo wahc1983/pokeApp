@@ -1,0 +1,42 @@
+<div class="container-pokemon-details">
+	<div class="back-inicio">
+		<button mat-raised-button [routerLink]="'/'" >Regresar</button>
+	</div>
+	<div class="header-pokemon-details">
+		<div># {{pokemon.id}}</div>
+		<div>{{pokemon.name}}</div>
+	</div>
+	<div class="content-pokemon-details">
+		<div></div>
+		<div class="first-content">
+			<div>
+				<h4>Movimientos:</h4>
+				<ul>
+			  	<li *ngFor="let move of pokemon.moves.slice(0, 10)" >
+			  		{{move.move.name}}
+			  	</li>					
+				</ul>	
+			</div>
+			<img src="{{imageUrl}}" alt="">
+			<div>
+				<h4>Tipo de pokémon:</h4>
+				<ul>
+			  	<li *ngFor="let tipo of pokemon.types" >
+			  		{{tipo.type.name}}
+			  	</li>					
+				</ul>				
+			</div>
+		</div>
+		<div></div>
+	</div>
+	<div class="footer-pokemon-details">
+		<div>
+			<span class="header"> Altura </span>
+			<span>{{pokemon.height}}</span>
+		</div>
+		<div>
+			<span class="header"> Peso </span>
+			<span>{{pokemon.weight}}</span>
+		</div>
+	</div>
+</div>
